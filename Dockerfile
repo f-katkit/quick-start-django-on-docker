@@ -5,4 +5,6 @@ WORKDIR /src
 RUN pip install -r requirements.txt
 VOLUME app
 
-CMD /bin/ash
+EXPOSE 8000
+WORKDIR /src/app
+CMD /usr/local/bin/python manage.py runserver 0.0.0.0:8000

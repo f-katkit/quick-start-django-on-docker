@@ -1,7 +1,19 @@
+git pull
 ```
-docker build -t quick-start-django .
+git pull git@github.com:f-katkit/quick-start-django-on-docker.git
 ```
 
+docker build
 ```
-docker run -it -v $(pwd):/src quick-start-django /bin/ash
+docker build -t quick-django .
+```
+
+docker run
+```
+docker run -it -v $(pwd):/src -p 8000:8000 --name quick-django --rm quick-django
+```
+
+create superuser
+```
+docker exec -it quick-django python manage.py createsuperuser
 ```
